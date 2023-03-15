@@ -75,7 +75,7 @@ javascript: (() => {
       const deleteSummarySelector = `${id} > div > div.d-table-cell.v-align-middle.col-1.col-md-3.text-small > div > div.text-right > details > ul > li > details > summary`;
       await clickElementWithText(deleteSummarySelector, "delete workflow run");
 
-      const confirmDeleteSelector = `${id} > div > div.d-table-cell.v-align-middle.col-1.col-md-3.text-small > div > div.text-right > details > ul > li:nth-child(2) > details > details-dialog > div.Box-body.pt-0.overflow-y-auto > div > form > button`;
+      const confirmDeleteSelector = `${id} > div > div.d-table-cell.v-align-middle.col-1.col-md-3.text-small > div > div.text-right > details > ul > li > details > details-dialog > div.Box-body.pt-0.overflow-y-auto > div > form > button`;
 
       await clickElement(confirmDeleteSelector);
     } catch (error) {
