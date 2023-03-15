@@ -44,6 +44,7 @@ javascript: (() => {
   }
 
   async function clickElement(selector) {
+    console.log(`Clicking element with selector: ${selector}...`);
     const elem = await waitForElement(selector);
     elem.click();
   }
@@ -57,7 +58,7 @@ javascript: (() => {
 
       await clickElement(moreSelector);
 
-      const deleteSelector = `${id} > div > div.d-table-cell.v-align-middle.col-1.col-md-3.text-small > div > div.text-right > details > ul > li:nth-child(2) > details > summary`;
+      const deleteSelector = `${id} > div > div.d-table-cell.v-align-middle.col-1.col-md-3.text-small > div > div.text-right > details > ul > li > details > summary:contains("Delete workflow run")`;
       await clickElement(deleteSelector);
 
       const confirmDeleteSelector = `${id} > div > div.d-table-cell.v-align-middle.col-1.col-md-3.text-small > div > div.text-right > details > ul > li:nth-child(2) > details > details-dialog > div.Box-body.pt-0.overflow-y-auto > div > form > button`;
