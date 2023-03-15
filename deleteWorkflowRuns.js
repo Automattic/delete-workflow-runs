@@ -49,10 +49,6 @@ javascript: (() => {
   }
 
   async function deleteWorkflowRun() {
-    const numberOfRunsToDelete = getNumberOfRunsToDelete();
-    if (numberOfRunsToDelete === 0) {
-      return;
-    }
     try {
       const checkSuiteElem = document.querySelector("[id^='check_suite_']");
       const id = `#${checkSuiteElem.id}`;
@@ -67,7 +63,6 @@ javascript: (() => {
       const confirmDeleteSelector = `${id} > div > div.d-table-cell.v-align-middle.col-1.col-md-3.text-small > div > div.text-right > details > ul > li:nth-child(2) > details > details-dialog > div.Box-body.pt-0.overflow-y-auto > div > form > button`;
 
       await clickElement(confirmDeleteSelector);
-      localStorage.setItem("numRunsToDelete", --numberOfRunsToDelete);
     } catch (error) {
       console.error(error.message);
     }
